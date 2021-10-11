@@ -1,0 +1,19 @@
+.selectBooks {
+    display: flex;
+    margin-right: 15px;
+    height: 40px;
+}
+.selectBooks:last-of-type {
+    margin-right: 0;
+    width: max-content;
+}
+.selectBooks__title {
+    color: white;
+    margin: auto 10px;
+    font-size: 16px;
+}
+
+.selectBooks__select {
+    width: 250px;
+    outline: none;
+}
