@@ -111,7 +111,6 @@ export const handlerShowLoadMoreBooks = (value, startIndex, initArrFoundBooks) =
         return booksApi
             .getBooks(value, startIndex)
             .then((data) => {
-                console.log(data);
                 if (data) {
                     const booksInfo = data.items.map((item) => {
                         return item.volumeInfo;
@@ -142,7 +141,6 @@ export const handlerGetBooks = (value, startIndex) => {
         return booksApi
             .getBooks(value, startIndex)
             .then((data) => {
-                console.log(data);
                 if (data.totalItems !== 0) {
                     const booksInfo = data.items.map((item) => {
                         return item.volumeInfo;

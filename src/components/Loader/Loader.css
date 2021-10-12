@@ -41,7 +41,7 @@
 
 .preloader {
     justify-self: center;
-    grid-column: 2/4;
+    grid-column: 1/-1;
 }
 
 .preloader__container {
@@ -81,3 +81,6 @@
     background: rgb(74, 78, 76);
     animation: preloader-inside-red 1s ease-in-out infinite;
 }
+
+
+

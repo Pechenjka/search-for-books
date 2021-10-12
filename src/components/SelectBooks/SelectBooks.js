@@ -6,10 +6,10 @@ const SelectBooks = ({ typeSelect, title, handlerChange, nameSelect }) => {
     return (
         <div className="selectBooks">
             <p className="selectBooks__title">{title}</p>
-            <select className="selectBooks__select" name={nameSelect} id={nameSelect} onChange={handlerChange}>
+            <select className="selectBooks__select" name={nameSelect} id={nameSelect} onChange={handlerChange} defaultValue={values.categories}>
                 {typeSelect.map((item, index) => {
                     return (
-                        <option key={index} value={item.value} selected={item.value === values.categories}>
+                        <option key={index} value={item.value} >
                             {item.value}
                         </option>
                     );

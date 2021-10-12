@@ -31,9 +31,11 @@
     border: none;
     outline: none;
 }
+
 .searchForm__input::placeholder {
     color: #a7a3a3;
 }
+
 .searchForm__button {
     background-image: url("/src/images/magnifier.png");
     background-position: center;
@@ -45,10 +47,47 @@
     background-color: white;
     padding: 8px;
 }
+
 .searchForm__button:hover {
     cursor: pointer;
 }
+
 .searchForm__container-selectBooks {
     display: flex;
     margin: 20px 0 0;
+}
+
+@media screen and (max-width: 768px) {
+    .searchForBooks__title {
+        font-size: 30px;
+    }
+
+    .searchForm {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+
+    .searchForm__container-selectBooks {
+        width: 100%;
+    }
+
+    .searchForm__input {
+        width: calc(100% - 40px);
+    }
+}
+
+@media screen and (max-width: 513px) {
+    .searchForBooks__title {
+        font-size: 25px;
+    }
+
+    .searchForm {
+        padding: 0 20px;
+    }
+
+    .searchForm__container-selectBooks {
+        flex-direction: column;
+        width: 100%;
+    }
 }

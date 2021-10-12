@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router-dom";
 import FoundBooks from "./components/FoundBooks/FoundBooks";
-import BookDescription from "./components/BookInformation/BookDescription";
+import BookDescription from "./components/BookDescription/BookDescription";
 
 const App = () => {
     return (

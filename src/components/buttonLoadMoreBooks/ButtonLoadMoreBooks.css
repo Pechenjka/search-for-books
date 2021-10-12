@@ -14,3 +14,9 @@
     cursor: pointer;
     background-color: #7f7e7e;
 }
+
+@media screen and (max-width: 1023px) {
+    .books__load-more-button {
+        grid-column: 1/-1;
+    }
+}
