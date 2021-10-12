@@ -1,4 +1,4 @@
-import {HIDE_LOADING, HIDE_LOADING_MORE_BOOKS, SHOW_LOADING, SHOW_LOADING_MORE_BOOKS} from "../types";
+import { HIDE_LOADING, HIDE_LOADING_MORE_BOOKS, SHOW_LOADING, SHOW_LOADING_MORE_BOOKS } from "../types";
 
 const initialState = {
     loading: false,

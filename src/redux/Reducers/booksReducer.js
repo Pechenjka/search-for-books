@@ -1,7 +1,10 @@
 import {
     ALL_FOUND_BOOKS,
+    BOOK_DESCRIPTION,
     FOUND_BOOKS,
+    HIDE_BOOK_DESCRIPTION,
     HIDE_NOT_FOUND,
+    SHOW_BOOK_DESCRIPTION,
     SHOW_NOT_FOUND,
     START_INDEX,
     START_INDEX_LOAD_MORE_BOOKS,
@@ -17,6 +20,8 @@ const initialState = {
     values: { categories: "all", sorting: "relevance", search: "" },
     valueForLoadMoreBook: {},
     notFound: false,
+    bookDescription: {},
+    book: false,
 };
 
 const booksReducer = (state = initialState, action) => {
@@ -42,6 +47,12 @@ const booksReducer = (state = initialState, action) => {
             return { ...state, notFound: true };
         case HIDE_NOT_FOUND:
             return { ...state, notFound: false };
+        case BOOK_DESCRIPTION:
+            return { ...state, bookDescription: action.payload };
+        case SHOW_BOOK_DESCRIPTION:
+            return { ...state, book: true };
+        case HIDE_BOOK_DESCRIPTION:
+            return { ...state, book: false };
         default:
             return state;
     }

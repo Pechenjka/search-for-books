@@ -31,7 +31,9 @@
     border: none;
     outline: none;
 }
-
+.searchForm__input::placeholder {
+    color: #a7a3a3;
+}
 .searchForm__button {
     background-image: url("/src/images/magnifier.png");
     background-position: center;

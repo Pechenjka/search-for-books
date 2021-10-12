@@ -1,10 +1,13 @@
 import booksApi from "../../utils/BooksApi";
 import {
     ALL_FOUND_BOOKS,
+    BOOK_DESCRIPTION,
     FOUND_BOOKS,
+    HIDE_BOOK_DESCRIPTION,
     HIDE_LOADING,
     HIDE_LOADING_MORE_BOOKS,
     HIDE_NOT_FOUND,
+    SHOW_BOOK_DESCRIPTION,
     SHOW_LOADING,
     SHOW_LOADING_MORE_BOOKS,
     SHOW_NOT_FOUND,
@@ -26,7 +29,6 @@ export const foundBooks = (data) => {
         payload: data,
     };
 };
-
 
 export const startIndexLoadMoreBooks = (data) => {
     return {
@@ -82,6 +84,25 @@ export const showLoadingMoreBooks = () => {
 export const hideLoadingMoreBooks = () => {
     return {
         type: HIDE_LOADING_MORE_BOOKS,
+    };
+};
+
+export const bookDescription = (data) => {
+    return {
+        type: BOOK_DESCRIPTION,
+        payload: data,
+    };
+};
+
+export const showBookDescription = () => {
+    return {
+        type: SHOW_BOOK_DESCRIPTION,
+    };
+};
+
+export const hideBookDescription = () => {
+    return {
+        type: HIDE_BOOK_DESCRIPTION,
     };
 };
 export const handlerShowLoadMoreBooks = (value, startIndex, initArrFoundBooks) => {
@@ -140,5 +161,15 @@ export const handlerGetBooks = (value, startIndex) => {
             .finally(() => {
                 dispatch(hideLoading());
             });
+    };
+};
+export const handlerShowBookCategories = (categories) => {
+    return () => {
+        if (Array.isArray(categories)) {
+            return categories.map((item) => {
+                const arrCategories = item.split(" ");
+                return arrCategories.slice(0, 1);
+            });
+        }
     };
 };

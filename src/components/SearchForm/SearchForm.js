@@ -1,8 +1,10 @@
 import "./SearchForm.css";
 
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import {
     handlerGetBooks,
+    hideBookDescription,
     hideNotFound,
     startIndexLoadMoreBooks,
     valueForLoadMoreBooks,
@@ -12,11 +14,13 @@ import SelectBooks from "../SelectBooks/SelectBooks";
 
 const SearchForm = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const values = useSelector((state) => state.books.values);
     const startIndex = useSelector((state) => state.books.startIndex);
+    const bookDescription = useSelector((state) => state.books.bookDescription);
 
     const categoriesBooks = [
-        { value: "all", selected: "all" },
+        { value: "all" },
         { value: "art" },
         { value: "biography" },
         { value: "computers" },
@@ -24,7 +28,7 @@ const SearchForm = () => {
         { value: "medical" },
         { value: "poetry" },
     ];
-    const sortingBooks = [{ value: "relevance", selected: "relevance" }, { value: "newest" }];
+    const sortingBooks = [{ value: "relevance" }, { value: "newest" }];
 
     const handlerChange = (event) => {
         const { name, value } = event.target;
@@ -38,6 +42,10 @@ const SearchForm = () => {
         dispatch(startIndexLoadMoreBooks(32));
         dispatch(valueForLoadMoreBooks(values));
         dispatch(valuesInput({ ...values, search: "" }));
+        if (bookDescription) {
+            history.push("/");
+            dispatch(hideBookDescription());
+        }
     };
 
     return (
@@ -51,11 +59,10 @@ const SearchForm = () => {
                     id="search"
                     required
                     value={values.search || ""}
+                    placeholder="Search"
                     onChange={handlerChange}
                 />
-                <button type="submit" className="searchForm__button">
-                    {/*<img src="/src/images/magnifier.svg" alt="иконка поиска"/>*/}
-                </button>
+                <button type="submit" className="searchForm__button"/>
                 <div className="searchForm__container-selectBooks">
                     <SelectBooks
                         typeSelect={categoriesBooks}
