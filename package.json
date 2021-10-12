@@ -1,5 +1,5 @@
 {
-    "name": "Search of books in Google Books API",
+    "name": "search-of-books",
     "version": "0.1.0",
     "private": true,
     "author": "Petr Lobachev <lobachevpetr@gmail.com>",

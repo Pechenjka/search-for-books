@@ -13,7 +13,7 @@ class BooksApi {
                 value.search
             }&maxResults=32&printType=books&startIndex=${startIndex}&orderBy=${
                 value.sorting
-            }&key = AIzaSyBgI8qm9qJQVdR5YJ2HRyiTX1BJN-w-jwM`,
+            }&key = ${process.env.API_KEY}`,
             {
                 method: "GET",
                 headers: this._headers,
