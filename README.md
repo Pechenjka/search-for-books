@@ -1,5 +1,7 @@
 # Search of books in Google Books API
 
+Поиск книг по ключевым словам на Google Books API. Настроена фильтрация (по категориям и по датам).
+
 ### Стек технологий
 
 - JavaScript
